@@ -1,15 +1,32 @@
+/* Global body styling */
 body {
     margin: 0;
-    background-color: black;
-    color: white;
+    background-image: url('OIG2.jpg'); /* Add the background image path here */
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
     font-family: Arial, sans-serif;
+    position: relative; /* To make sure the overlay is above this background */
 }
 
+/* Faded Overlay */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black for the fade effect */
+    z-index: -1; /* Ensure the overlay is behind the content */
+}
+
+/* The box that allows access to the site */
 .enter-box {
     position: absolute;
     background: rgba(0, 0, 50, 0.8);
@@ -27,6 +44,7 @@ body {
     pointer-events: none;
 }
 
+/* Main content styling */
 .main-content {
     display: none;
     flex-wrap: wrap;
@@ -38,6 +56,7 @@ body {
     background: radial-gradient(circle, #001f3f, black);
 }
 
+/* Panel styling */
 .panel {
     width: 200px;
     height: 200px;
@@ -68,7 +87,7 @@ body {
     font-weight: bold;
 }
 
-/* Floating detail panel */
+/* Floating detail panels */
 .detail-panel {
     position: fixed;
     top: 50%;
@@ -94,6 +113,7 @@ body {
     display: block;
 }
 
+/* Detail panel content */
 .detail-panel .content {
     margin-top: 20px;
 }
@@ -101,8 +121,17 @@ body {
 .detail-panel h2 {
     font-size: 36px;
     margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6); /* Green glowing effect */
 }
 
+/* Text styling inside detail panel */
+.detail-panel p {
+    font-size: 18px;
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Subtle white glow on text */
+}
+
+/* List styling */
 .detail-panel ul {
     list-style-type: none;
     padding: 0;
@@ -113,6 +142,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* Close button styling */
 .detail-panel .close-btn {
     position: absolute;
     top: 10px;
@@ -123,4 +153,54 @@ body {
     padding: 10px;
     cursor: pointer;
     font-size: 16px;
+}
+
+/* Close button hover effect */
+.detail-panel .close-btn:hover {
+    background: rgba(255, 0, 0, 0.7);
+}
+
+/* Styling for each individual floating panel */
+#networking, #itsupport, #cybersecurity-panel, #sysadmin-panel, #biography-panel, #militaryexperience-panel {
+    background-image: url('C:\Users\zeros\Desktop\PortfolioNSCC\Images\OIG3.jpg'); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Subtle shadow around each panel */
+}
+
+/* Glowing effect for the headings */
+#networking h2, #itsupport h2, #cybersecurity-panel h2, #sysadmin-panel h2, #biography-panel h2, #militaryexperience-panel h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6); /* Green glowing effect for all headings */
+}
+
+/* Glowing effect for paragraph text inside panels */
+#networking .content p, #itsupport .content p, #cybersecurity-panel .content p, #sysadmin-panel .content p, #biography-panel .content p, #militaryexperience-panel .content p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Subtle white glow on text */
+}
+
+/* Close button styling for all detail panels */
+#networking .close-btn, #itsupport .close-btn, #cybersecurity-panel .close-btn, #sysadmin-panel .close-btn, #biography-panel .close-btn, #militaryexperience-panel .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#networking .close-btn:hover, #itsupport .close-btn:hover, #cybersecurity-panel .close-btn:hover, #sysadmin-panel .close-btn:hover, #biography-panel .close-btn:hover, #militaryexperience-panel .close-btn:hover {
+    background: rgba(255, 0, 0, 0.7); /* Red background on hover */
 }
