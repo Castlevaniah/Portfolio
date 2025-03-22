@@ -5,3 +5,7 @@ function enterSite() {
         document.querySelector('.main-content').style.display = 'flex';
     }, 1000);
 }
+
+function closePanel(panelId) {
+    document.querySelector(panelId).style.display = 'none';
+}

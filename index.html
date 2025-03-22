@@ -9,13 +9,113 @@
 <body>
     <div class="enter-box" onclick="enterSite()">Click To Access Portfolio</div>
     <div class="main-content">
-        <div class="panel" id="skills" onclick="showDetail('skills')">Networking</div>
-        <div class="panel" id="experience" onclick="showDetail('experience')">IT Support</div>
-        <div class="panel" id="education" onclick="showDetail('education')">Cybersecurity</div>
-        <div class="panel" id="cybersecurity" onclick="showDetail('cybersecurity')">System Administration</div>
-        <div class="panel" id="sysadmin" onclick="showDetail('sysadmin')">Biography</div>
-        <div class="panel" id="military" onclick="showDetail('military')">Military Experience</div>
+        <div class="panel" id="skills">
+            <a href="#networking" class="panel-link">Networking</a>
+        </div>
+        <div class="panel" id="experience">
+            <a href="#itsupport" class="panel-link">IT Support</a>
+        </div>
+        <div class="panel" id="education">
+            <a href="#cybersecurity-panel" class="panel-link">Cybersecurity</a>
+        </div>
+        <div class="panel" id="sysadmin">
+            <a href="#sysadmin-panel" class="panel-link">System Administration</a>
+        </div>
+        <div class="panel" id="biography">
+            <a href="#biography-panel" class="panel-link">Biography</a>
+        </div>
+        <div class="panel" id="military">
+            <a href="#militaryexperience-panel" class="panel-link">Military Experience</a>
+        </div>
     </div>
+
+    <!-- Floating Panels -->
+    <div id="networking" class="detail-panel">
+        <a href="#" class="close-btn" onclick="closePanel('#networking')">X</a>
+        <h2>Networking</h2>
+        <div class="content">
+            <p>This section contains detailed information about Networking.</p>
+            <img src="networking-image.jpg" alt="Networking" style="width:100%; height:auto;">
+            <ul>
+                <li>TCP/IP Configuration</li>
+                <li>Routing Protocols</li>
+                <li>Network Security</li>
+                <li>LAN/WAN Technologies</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="itsupport" class="detail-panel">
+        <a href="#" class="close-btn" onclick="closePanel('#itsupport')">X</a>
+        <h2>IT Support</h2>
+        <div class="content">
+            <p>This section contains detailed information about IT Support.</p>
+            <img src="itsupport-image.jpg" alt="IT Support" style="width:100%; height:auto;">
+            <ul>
+                <li>Desktop Troubleshooting</li>
+                <li>Hardware Maintenance</li>
+                <li>Network Configuration</li>
+                <li>Remote Assistance</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="cybersecurity-panel" class="detail-panel">
+        <a href="#" class="close-btn" onclick="closePanel('#cybersecurity-panel')">X</a>
+        <h2>Cybersecurity</h2>
+        <div class="content">
+            <p>This section contains detailed information about Cybersecurity.</p>
+            <img src="cybersecurity-image.jpg" alt="Cybersecurity" style="width:100%; height:auto;">
+            <ul>
+                <li>Network Security</li>
+                <li>Penetration Testing</li>
+                <li>Digital Forensics</li>
+                <li>Malware Analysis</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="sysadmin-panel" class="detail-panel">
+        <a href="#" class="close-btn" onclick="closePanel('#sysadmin-panel')">X</a>
+        <h2>System Administration</h2>
+        <div class="content">
+            <p>This section contains detailed information about System Administration.</p>
+            <img src="sysadmin-image.jpg" alt="System Administration" style="width:100%; height:auto;">
+            <ul>
+                <li>Server Management</li>
+                <li>Cloud Solutions</li>
+                <li>Database Administration</li>
+                <li>Backup and Recovery</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="biography-panel" class="detail-panel">
+        <a href="#" class="close-btn" onclick="closePanel('#biography-panel')">X</a>
+        <h2>Biography</h2>
+        <div class="content">
+            <p>This section contains your biography and personal information.</p>
+            <ul>
+                <li>Experience Overview</li>
+                <li>Education Background</li>
+                <li>Skills and Certifications</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="militaryexperience-panel" class="detail-panel">
+        <a href="#" class="close-btn" onclick="closePanel('#militaryexperience-panel')">X</a>
+        <h2>Military Experience</h2>
+        <div class="content">
+            <p>This section contains your military experience details.</p>
+            <ul>
+                <li>Royal Canadian Navy Service</li>
+                <li>Leadership and Training</li>
+                <li>Operational Expertise</li>
+            </ul>
+        </div>
+    </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>
