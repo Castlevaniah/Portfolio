@@ -1,7 +1,7 @@
 /* Global body styling */
 body {
     margin: 0;
-    background-image: url('OIG2.jpg'); /* Add the background image path here */
+    background-image: url('Gemini_Generated_Image_91yn3c91yn3c91yn.jpg'); /* Add the background image path here */
     background-size: cover;
     background-position: center;
     color: rgb(255, 255, 255);
@@ -147,7 +147,7 @@ body::before {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: red;
+    background: rgb(0, 0, 0);
     color: white;
     border: none;
     padding: 10px;
@@ -157,7 +157,7 @@ body::before {
 
 /* Close button hover effect */
 .detail-panel .close-btn:hover {
-    background: rgba(255, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.7);
 }
 
 /* Styling for each individual floating panel */
@@ -202,5 +202,5 @@ body::before {
 }
 
 #networking .close-btn:hover, #itsupport .close-btn:hover, #cybersecurity-panel .close-btn:hover, #sysadmin-panel .close-btn:hover, #biography-panel .close-btn:hover, #militaryexperience-panel .close-btn:hover {
-    background: rgba(255, 0, 0, 0.7); /* Red background on hover */
+    background: rgba(12, 88, 228, 0.7); /* Red background on hover */
 }
