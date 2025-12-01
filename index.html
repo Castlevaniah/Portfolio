@@ -1,202 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT PORTFOLIO<title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aaron Hirtle – IT Portfolio</title>
+
+    <!-- Optional: Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="enter-box" onclick="enterSite()">Click To Access Portfolio</div>
-    <div class="main-content">
-        <div class="panel" id="skills">
-            <a href="#networking" class="panel-link">Networking</a>
-        </div>
-        <div class="panel" id="experience">
-            <a href="#itsupport" class="panel-link">IT Support</a>
-        </div>
-        <div class="panel" id="education">
-            <a href="#cybersecurity-panel" class="panel-link">Cybersecurity</a>
-        </div>
-        <div class="panel" id="sysadmin">
-            <a href="#sysadmin-panel" class="panel-link">System Administration</a>
-        </div>
-        <div class="panel" id="biography">
-            <a href="#biography-panel" class="panel-link">Biography</a>
-        </div>
-        <div class="panel" id="military">
-            <a href="#militaryexperience-panel" class="panel-link">Resume</a>
-        </div>
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
     </div>
 
-    <!-- Floating Panels -->
-    <div id="networking" class="detail-panel">
-        <a href="#" class="close-btn">X</a>
-        <h2>Networking</h2>
-        <div class="content">
-            <p>
-                My professional journey is built upon a robust foundation in network operations and security, marked by extensive experience in configuring, managing, and troubleshooting complex LAN/WAN environments. I possess a deep understanding of network infrastructure, including routers, switches, firewalls, and VPNs, with a proven ability to optimize both security and performance. This expertise ensures seamless network functionality and robust protection against evolving threats, crucial for maintaining operational integrity in demanding scenarios.
-            </p>
-            <p>
-                Beyond general network administration, I bring specialized skills in network security monitoring, incident response, and digital forensics. My background includes significant experience in high-stakes environments, notably within military and maritime contexts, where rapid and decisive action is paramount. This experience is further augmented by my involvement in high-level international Defensive Cyber Operations (DCO) exercises, such as Cyber Flag competitions, demonstrating my capacity to handle intricate network security challenges and secure communications under intense pressure.
-            </p>
-            <p>
-                My technical proficiency extends to practical application, encompassing hands-on experience with a wide array of NOC monitoring tools and advanced cybersecurity techniques. I am adept in areas such as penetration testing, cryptography, and malware analysis, allowing for comprehensive threat assessment and mitigation. This combination of theoretical knowledge and practical skill equips me to effectively safeguard critical network assets and contribute to a proactive security posture, ensuring resilience against sophisticated cyber threats.
-            </p>
-            <img src="ab_datacenter-switch-scaled.jpg" alt="Networking Image" />
+    <header class="site-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-name">Aaron Neil Hirtle</span>
+                <span class="logo-tagline">IT & Communications • Royal Canadian Navy (2010–2025)</span>
+            </div>
+
+            <div class="nav-right">
+                <!-- Theme toggle -->
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    🌙
+                </button>
+
+                <!-- Mobile menu button -->
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    ☰
+                </button>
+
+                <nav class="main-nav">
+                    <a href="#about">About</a>
+                    <a href="#expertise">Expertise</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#resume">Résumé</a>
+                    <a href="#contact" class="nav-cta">Contact</a>
+                </nav>
+            </div>
         </div>
-    </div>
+    </header>
 
-    <div id="itsupport" class="detail-panel">
-        <a href="#" class="close-btn">X</a>
-        <h2>IT Support</h2>
-        <div class="content">
-            <p>
-                As a seasoned IT professional, I deliver comprehensive support across diverse environments, from remote troubleshooting to on-site solutions. My expertise encompasses a wide range of systems, including desktops, laptops, and peripherals, with proficiency in Windows and Linux operating system management. I ensure robust IT infrastructure through meticulous Active Directory administration, strategic system updates, and reliable backup management, prioritizing security and functionality. 
-                <br><br>
-                My experience extends to mission-critical operations within maritime and military sectors, where I've maintained unwavering communication and network security in demanding shipboard settings. Notably, my specialized skills in supervising and maintaining MSAX systems guarantee seamless voice and data transmission, a testament to my ability to perform under high-pressure scenarios. I thrive on resolving complex technical challenges and ensuring uninterrupted operational efficiency.
-            </p>
-            <img src="Whats-IT-Support.jpg" alt="IT Support Image" style="width: 60%; max-width: 400px; height: auto;" />
+    <main>
+        <!-- HERO / INTRO SECTION -->
+        <section class="hero">
+            <!-- Floating orbs -->
+            <div class="hero-orb orb-1"></div>
+            <div class="hero-orb orb-2"></div>
+            <div class="hero-orb orb-3"></div>
 
-        </div>
-    </div>
+            <div class="container hero-inner">
+                <div class="hero-text reveal">
+                    <h1 id="hero-title">IT & Communications Technician</h1>
+                    <p>
+                        Halifax-based IT and communications technician with 15 years of service
+                        in the Royal Canadian Navy. Experienced in shipboard IT support,
+                        desktop troubleshooting, and maintaining reliable communications at sea and ashore.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#expertise" class="btn primary">View Expertise</a>
+                        <a href="#projects" class="btn secondary">See Project Work</a>
+                    </div>
+                </div>
+                <div class="hero-summary reveal tilt-card">
+                    <h2>Quick Highlights</h2>
+                    <ul>
+                        <li>15 years in the Royal Canadian Navy (2010–2025)</li>
+                        <li>Shipboard IT & end-user support in demanding environments</li>
+                        <li>Basic server & network administration (Windows / Linux)</li>
+                        <li>Currently completing IT Programming Diploma at NSCC</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <div id="cybersecurity-panel" class="detail-panel">
-        <a href="#" class="close-btn">X</a>
-        <h2>Cybersecurity</h2>
-        <div class="content">
-            <p>
-                I specialize in cybersecurity, with a strong focus on incident response, digital forensics, and network security. I have hands-on experience monitoring, securing, and defending networks against cyber threats, utilizing advanced techniques in malware analysis, penetration testing, and cryptography. My expertise extends to performing digital forensics investigations and contributing to high-level Defensive Cyber Operations (DCO) exercises with the Canadian Armed Forces, US Cyber Command, and NSA. I have actively participated in competitive cybersecurity events, including 
-                <a href="https://www.lookoutnewspaper.com/rcn-team-crowned-cyber-security-champion/" target="_blank">Cyber Flag</a> competitions and ADF Capture the Flag, where I achieved top placements. My work in cybersecurity not only includes threat detection but also proactive risk mitigation, ensuring robust defense systems for both military and civilian networks.
-            </p>
-            
-            <img src="what-is-cybersecurity.jpg" alt="CS Image" style="width: 60%; max-width: 400px; height: auto;" />
-        </div>
-    </div>
-    
+        <!-- ABOUT -->
+        <section id="about" class="section section-alt">
+            <div class="container narrow reveal">
+                <h2>About</h2>
+                <p>
+                    I am an IT and communications technician with 15 years of service in the
+                    Royal Canadian Navy, supporting systems both at sea and ashore. My work has
+                    focused on keeping desktops, laptops, shipboard communications, and basic
+                    server and network services running smoothly in high-pressure environments.
+                </p>
+                <p>
+                    I’m known for staying calm under pressure, following procedures and
+                    checklists, and explaining technical issues clearly to non-technical users.
+                    I’m now transitioning into civilian IT, building on my operational
+                    experience while completing an IT Programming Diploma at Nova Scotia
+                    Community College.
+                </p>
+            </div>
+        </section>
 
-    <div id="sysadmin-panel" class="detail-panel">
-        <a href="#" class="close-btn">X</a>
-        <h2>System Administration</h2>
-        <div class="content">
-            <p>With over 15 years of dedicated service in the Royal Canadian Navy, I have cultivated a deep and extensive expertise in system administration, encompassing the full lifecycle of IT infrastructure management. My proficiency spans both Windows and Linux environments, where I have consistently demonstrated the ability to maintain high availability and optimal performance. My experience includes the comprehensive administration of Active Directory, managing user accounts, group policies, and ensuring robust security protocols to protect sensitive data and maintain compliance. My commitment to system integrity is evident in my meticulous approach to performing system updates, patches, and backups, minimizing downtime and ensuring rapid disaster recovery.</p>
-    
-            <p>My skillset extends to the configuration, maintenance, and troubleshooting of complex server infrastructures, both on-premises and in challenging shipboard environments, utilizing virtualization technologies such as VMware and Hyper-V to optimize resource allocation and enhance system efficiency. I have successfully managed mission-critical systems, including MSAX, ensuring secure and reliable voice and data transmission in high-pressure operational scenarios, requiring meticulous attention to detail and rapid problem-solving. My expertise in network administration, including the configuration and management of routers, switches, firewalls, and VPNs, further strengthens my ability to maintain secure and efficient network connectivity. I have also deployed and managed essential services like DNS/DHCP, IIS, and SQL, and leveraged scripting languages such as PowerShell for automation and task optimization, improving operational efficiency and reducing manual intervention.</p>
-    
-            <p>My hands-on experience in diagnosing and resolving complex technical issues, coupled with my commitment to maintaining comprehensive and accurate documentation, ensures seamless and efficient system performance across diverse environments. My experience in the military has instilled a strong sense of discipline, attention to detail, and a proactive approach to problem-solving, which are invaluable assets in any IT environment. Furthermore, my participation in international Defensive Cyber Operations (DCO) exercises has provided me with a unique perspective on security best practices and the importance of robust system protection. I have also been a key member of teams that have won multiple high-stakes cybersecurity competitions, showcasing my ability to perform under pressure and deliver exceptional results.</p>
-    
-            <p>This diverse and extensive skillset, honed through rigorous military training and practical experience, positions me as a highly capable system administrator, adept at handling complex IT challenges and ensuring the reliability, security, and efficiency of critical systems in both commercial and military settings.</p>
-            <img src="systemadmin.jpg" alt="System Admin Image" style="width: 60%; max-width: 400px; height: auto;" />
-        </div>
-    </div>
+        <!-- EXPERTISE -->
+        <section id="expertise" class="section">
+            <div class="container reveal">
+                <h2>Areas of Expertise</h2>
+                <p class="section-intro">
+                    These are the key areas I’ve worked in so far. I’ll expand each section with
+                    more detail and examples as I develop this portfolio.
+                </p>
 
-    <div id="biography-panel" class="detail-panel">
-        <a href="#" class="close-btn">X</a>
-        <h2>Biography</h2>
-        <div class="content">
-            <p>
-                <strong>Early Life and Family:</strong><br>
-                Born in Truro, Nova Scotia, and raised amidst the rugged beauty of Prospect, my life has always been intertwined with a deep fascination for technology and the boundless realms of science fiction. The year 2007 marked a pivotal moment with the joyous arrival of my daughter, Sophie, forever altering my perspective on the world.
-            </p>
-            <p>
-                <strong>Military Career and Technical Expertise:</strong><br>
-                In 2010, I embarked on a significant chapter, joining the Royal Canadian Navy, a decision that would shape my professional and personal life. My 15-year military career became a crucible for my IT and cybersecurity expertise. I managed and secured vital network systems, responding to incidents and conducting digital forensics. I had the opportunity to participate in significant international cybersecurity exercises and competitions, working alongside top experts from Canada and the United States. My responsibilities also included system administration, where I ensured smooth operations and provided technical support for various systems, both on land and at sea. I played key roles in IT projects, including the CSC Shipbuilding Project and the Thin Client Desktop Upgrade. This extensive military experience provided a robust foundation in IT and cybersecurity, preparing me for future challenges.
-            </p>
-            <p>
-                <strong>Personal Life and Family Growth:</strong><br>
-                My first posting in Victoria, British Columbia, proved to be more than just a duty station; it was where I met my incredible wife. We eventually made our home in Halifax, celebrating our marriage in 2016. The following year, our family expanded with the birth of our son, Axel, bringing immeasurable joy.
-            </p>
-            <p>
-                <strong>Current and Future Endeavors:</strong><br>
-                Currently, I’m furthering my education with an IT Programming Diploma at Nova Scotia Community College, focusing on software development, programming languages, database management, and system analysis. I’m also pursuing cybersecurity training and certifications in digital forensics, penetration testing, and malware analysis. After retiring from the Navy in 2025, I am eager to leverage my extensive technical skills and hands-on experience in a challenging IT role, carrying with me the lessons and experiences gained from a life lived between the tangible world of technology and the imaginative landscapes of science fiction.
-            </p>
-            
-        </div>
-    </div>
-
-    <div id="militaryexperience-panel" class="detail-panel">
-        <a href="#" class="close-btn">X</a>
-        <h2>Resume</h2>
-        <div class="content">
-            <p>Aaron Neil Hirtle<br>
-            Halifax, NS<br>
-            Phone: 902-292-3550 | Email: aaronneilhirtle@gmail.com<br>
-            www.linkedin.com/in/aaron-neil-hirtle-2312a8227<br><br>
-            <strong>Objective</strong><br>
-            Experienced IT professional with expertise in server support, desktop troubleshooting, network administration, and NOC operations. Strong background in maintaining IT systems, ensuring network security, and providing technical support in military and maritime settings. Specializing in cybersecurity, digital forensics, and incident response. Seeking to leverage diverse technical skills and hands-on experience in a challenging IT role.<br><br>
-            <strong>Skills</strong><br>
-            <ul>
-                <li>Technical: Network Configuration, Server Administration, Active Directory, Virtualization (VMware, Hyper-V), DNS/DHCP, Backup/Disaster Recovery</li>
-                <li>Cybersecurity: Incident Response, Digital Forensics, Malware Analysis, Penetration Testing, Network Security, Encryption</li>
-                <li>Tools & Technologies: Windows Server, Linux, SQL, PowerShell, IIS, Ticketing Systems (ServiceNow, Jira), NOC Monitoring Tools</li>
-                <li>Operating Systems: Windows 10/11, Windows Server, Linux (Red Hat, Ubuntu), macOS</li>
-                <li>Soft Skills: Problem-Solving, Customer Support, Team Collaboration, Time Management</li>
-            </ul><br>
-            <strong>Professional Experience</strong><br>
-            <strong>Naval Communicator</strong><br>
-            Royal Canadian Navy | Halifax, NS | 06/2010 – 04/2016<br>
-            <ul>
-                <li>Managed secure communications and ensured data transmission for mission-critical operations.</li>
-                <li>Operated cryptographic and satellite communication devices.</li>
-                <li>Supported emergency response, ship maintenance, and search/rescue operations.</li>
-            </ul><br>
-            <strong>MSAX Supervisor</strong><br>
-            Royal Canadian Navy, NCS | Halifax, NS | 04/2016 – 09/2019<br>
-            <ul>
-                <li>Supervised MSAX systems, ensuring reliable voice and data transmission.</li>
-                <li>Coordinated maintenance and troubleshooting of MSAX hardware/software.</li>
-                <li>Managed team, provided guidance, and maintained communication logs and service records.</li>
-            </ul><br>
-            <strong>NOC Operator & System Administrator</strong><br>
-            Royal Canadian Navy | Halifax, NS | 09/2019 – 10/2022<br>
-            <ul>
-                <li>Monitored and managed LAN/WAN networks to ensure security and performance.</li>
-                <li>Administered network infrastructure (routers, switches, firewalls, VPNs).</li>
-                <li>Managed Active Directory, performed updates, patches, and backups for Windows/Linux systems.</li>
-            </ul><br>
-            <strong>Desktop Support Technician</strong><br>
-            Royal Canadian Navy | Halifax, NS | 10/2022 – 02/2023<br>
-            <ul>
-                <li>Provided technical support for desktops, laptops, and peripherals.</li>
-                <li>Configured OS installations, set up workstations, and delivered remote desktop support.</li>
-            </ul><br>
-            <strong>Ship Support Network & Server Technician</strong><br>
-            Royal Canadian Navy | Halifax, NS | 02/2023 – 02/2025<br>
-            <ul>
-                <li>Supported shipboard network/server infrastructure, ensuring reliable communications.</li>
-                <li>Monitored and maintained critical network equipment (routers, switches, firewalls).</li>
-                <li>Troubleshot network connectivity issues and provided technical support to ship personnel.</li>
-            </ul><br>
-            <strong>Cybersecurity Experience</strong><br>
-            <ul>
-                <li>Proficient in both physical and cybersecurity.</li>
-                <li>Participated in high-level international Defensive Cyber Operations (DCO) exercises hosted by Canadian Armed Forces, US Cyber Command, and NSA.</li>
-                <li>Actively developing skills in Cyber Incident Response, Digital Forensics, Penetration Testing, and Malware Analysis.</li>
-                <li>Cyber Flag 2021-2023: Part of the Navy's winning team in 2021, 2022, and achieved top placements in 2023 competitions.</li>
-                <li>ADF Capture the Flag 2024: Participated in advanced cyber challenges involving penetration testing, cryptography, and reverse engineering.</li>
-            </ul><br>
-            <strong>Education</strong><br>
-            <strong>IT Programming Diploma</strong><br>
-            Nova Scotia Community College (NSCC) | Halifax, NS | Expected Completion: 2026<br>
-            <ul>
-                <li>Focus: Software development, programming languages (Python, Java), database management, system analysis.</li>
-            </ul><br>
-            <strong>Project Experience</strong><br>
-            <strong>IT Liaison for CSC Shipbuilding Project</strong><br>
-            Royal Canadian Navy | Halifax, NS | 04/2018 – 10/2018<br>
-            <ul>
-                <li>Maintained documentation and provided IT support for the shipbuilding project's network/server infrastructure.</li>
-            </ul><br>
-            <strong>Thin Client Desktop Upgrade Project Team Member</strong><br>
-            Royal Canadian Navy | Halifax, NS | 12/2022 – 07/2023<br>
-            <ul>
-                <li>Assisted in upgrading desktop infrastructure to thin client systems, including deployment, configuration, and end-user training.</li>
-            </ul><br>
+                <div class="card-grid">
+                    <div class="card reveal tilt-card">
+                        <h3>End-User IT Support</h3>
+                        <p>
+                            Desktop and laptop setup, OS installs, basic repairs, printers, and
+                            remote support for military personnel.
                         </p>
-            
-        </div>
-    </div>
+                    </div>
 
-    <script src="scripts.js"></script>
+                    <div class="card reveal tilt-card">
+                        <h3>Systems & Networks</h3>
+                        <p>
+                            Windows and Linux environments, basic server support, user accounts,
+                            updates, and backups in LAN/WAN setups.
+                        </p>
+                    </div>
+
+                    <div class="card reveal tilt-card">
+                        <h3>Communications Systems</h3>
+                        <p>
+                            Shipboard communications and MSAX voice/data systems to keep
+                            mission-critical links reliable at sea.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section section-alt">
+            <div class="container narrow reveal">
+                <h2>Projects</h2>
+                <p>
+                    Below are a couple of internal projects I supported while serving in the
+                    Canadian Armed Forces. I’ll add more academic and personal projects from
+                    my NSCC work as I go.
+                </p>
+                <div class="project-list">
+                    <article class="project-item reveal tilt-card">
+                        <h3>CSC Shipbuilding Project – IT Liaison</h3>
+                        <p>
+                            Assisted with collecting and updating information on shipboard
+                            network and server infrastructure. Helped bridge communication
+                            between technical teams and end-users during early planning and
+                            documentation work.
+                        </p>
+                    </article>
+                    <article class="project-item reveal tilt-card">
+                        <h3>Thin Client Desktop Upgrade</h3>
+                        <p>
+                            Supported the rollout of thin client systems (2022–2023), helping
+                            users transition from traditional desktops, reporting issues, and
+                            feeding back user experience to the project team.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESUME OVERVIEW -->
+        <section id="resume" class="section">
+            <div class="container narrow reveal">
+                <h2>Résumé Overview</h2>
+                <p>
+                    This is a brief snapshot of my skills and experience. I’ll link a full
+                    résumé PDF and add more detail as this site grows.
+                </p>
+
+                <div class="resume-grid">
+                    <div class="reveal tilt-card">
+                        <h3>Core Skills</h3>
+                        <ul>
+                            <li>End-user support & remote troubleshooting</li>
+                            <li>Windows & Linux environments, basic server support</li>
+                            <li>Shipboard communications & MSAX voice/data systems</li>
+                            <li>Troubleshooting, documentation, procedures & checklists</li>
+                            <li>Exposure to CAF cyber defence training & security awareness</li>
+                        </ul>
+                    </div>
+                    <div class="reveal tilt-card">
+                        <h3>Recent Role</h3>
+                        <ul>
+                            <li>
+                                <strong>IT & Communications Support</strong><br />
+                                Royal Canadian Navy (2010–2025)
+                            </li>
+                            <li>
+                                Provided day-to-day support for desktops, laptops, printers,
+                                and peripherals.
+                            </li>
+                            <li>
+                                Assisted with user accounts, system updates, and basic server
+                                maintenance.
+                            </li>
+                            <li>
+                                Supported shipboard network and communication systems to keep
+                                voice and data stable during operations.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="resume-note">
+                    Education: IT Programming Diploma (In Progress), Nova Scotia Community
+                    College (NSCC), Halifax, NS – Expected Completion: 2026.
+                </p>
+
+                <!-- Example résumé download button (update the href path to your actual file) -->
+                <!-- <a href="Aaron_Hirtle_Resume.pdf" class="btn primary" download>Download Résumé (PDF)</a> -->
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section section-alt">
+            <div class="container narrow reveal">
+                <h2>Contact</h2>
+                <p>
+                    Based in Halifax, NS. I’m open to IT support, systems, and junior
+                    networking roles where I can grow my skills and bring my operational
+                    experience into a civilian environment.
+                </p>
+                <ul class="contact-list">
+                    <li><strong>Location:</strong> Halifax, NS</li>
+                    <li><strong>Phone:</strong> 902-292-3550</li>
+                    <li>
+                        <strong>Email:</strong>
+                        <a href="mailto:aaronneilhirtle@gmail.com">aaronneilhirtle@gmail.com</a>
+                    </li>
+                    <li>
+                        <strong>LinkedIn:</strong>
+                        <a href="https://www.linkedin.com/in/aaron-neil-hirtle-2312a8227" target="_blank">
+                            www.linkedin.com/in/aaron-neil-hirtle-2312a8227
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Aaron Neil Hirtle. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script>
+        // 1) Keep footer year current
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // 2) Smooth scroll for internal links (nav + buttons)
+        const scrollLinks = document.querySelectorAll('a[href^="#"]');
+
+        scrollLinks.forEach(link => {
+            link.addEventListener("click", (event) => {
+                const href = link.getAttribute("href");
+                if (!href || href === "#") return;
+
+                const targetId = href.substring(1);
+                const targetEl = document.getElementById(targetId);
+
+                if (targetEl) {
+                    event.preventDefault();
+                    targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            });
+        });
+
+        // 3) Highlight active nav link while scrolling
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".main-nav a");
+
+        function setActiveNav() {
+            let currentId = "";
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const sectionTop = scrollY + rect.top;
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollY >= sectionTop - 140 && scrollY < sectionTop + sectionHeight - 140) {
+                    currentId = section.id;
+                }
+            });
+
+            navLinks.forEach(link => {
+                const href = link.getAttribute("href");
+                const matches = href === `#${currentId}`;
+                link.classList.toggle("active", matches);
+            });
+        }
+
+        // 4) Mobile nav toggle
+        const navToggle = document.querySelector(".nav-toggle");
+        const mainNav = document.querySelector(".main-nav");
+
+        if (navToggle && mainNav) {
+            navToggle.addEventListener("click", () => {
+                mainNav.classList.toggle("open");
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    mainNav.classList.remove("open");
+                });
+            });
+        }
+
+        // 5) Typewriter effect on hero title
+        const heroTitle = document.getElementById("hero-title");
+        if (heroTitle) {
+            const fullText = heroTitle.textContent.trim();
+            heroTitle.textContent = "";
+            let index = 0;
+
+            function typeNext() {
+                if (index <= fullText.length) {
+                    heroTitle.textContent = fullText.slice(0, index);
+                    index++;
+                    setTimeout(typeNext, 70);
+                }
+            }
+
+            setTimeout(typeNext, 400);
+        }
+
+        // 6) Scroll reveal animations
+        const revealEls = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("reveal-visible");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.2 }
+            );
+
+            revealEls.forEach((el, index) => {
+                el.style.transitionDelay = `${index * 60}ms`;
+                observer.observe(el);
+            });
+        } else {
+            revealEls.forEach((el) => el.classList.add("reveal-visible"));
+        }
+
+        // 7) Theme toggle (with saved preference)
+        const body = document.body;
+        const themeToggle = document.querySelector(".theme-toggle");
+
+        function updateThemeIcon() {
+            if (!themeToggle) return;
+            if (body.classList.contains("light-theme")) {
+                themeToggle.textContent = "☀️";
+            } else {
+                themeToggle.textContent = "🌙";
+            }
+        }
+
+        const storedTheme = localStorage.getItem("theme");
+        if (storedTheme === "light") {
+            body.classList.add("light-theme");
+        }
+        updateThemeIcon();
+
+        if (themeToggle) {
+            themeToggle.addEventListener("click", () => {
+                const isLight = body.classList.toggle("light-theme");
+                localStorage.setItem("theme", isLight ? "light" : "dark");
+                updateThemeIcon();
+            });
+        }
+
+        // 8) Scroll progress bar
+        const progressBar = document.querySelector(".scroll-progress-bar");
+
+        function updateProgressBar() {
+            if (!progressBar) return;
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // 9) Back-to-top button
+        const backToTopBtn = document.querySelector(".back-to-top");
+
+        function updateBackToTop() {
+            if (!backToTopBtn) return;
+            if (window.pageYOffset > 400) {
+                backToTopBtn.classList.add("visible");
+            } else {
+                backToTopBtn.classList.remove("visible");
+            }
+        }
+
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
+
+        // 10) Hero parallax (scroll-based background)
+        const heroSection = document.querySelector(".hero");
+
+        function updateHeroParallax() {
+            if (!heroSection) return;
+            const offset = window.pageYOffset;
+            heroSection.style.backgroundPosition = `center ${offset * 0.2}px`;
+        }
+
+        // 11) Header shrink on scroll
+        const headerEl = document.querySelector(".site-header");
+
+        function updateHeaderState() {
+            if (!headerEl) return;
+            if (window.pageYOffset > 10) {
+                headerEl.classList.add("scrolled");
+            } else {
+                headerEl.classList.remove("scrolled");
+            }
+        }
+
+        // 12) Mouse parallax for hero content and orbs
+        const heroInner = document.querySelector(".hero-inner");
+        const heroOrbs = document.querySelectorAll(".hero-orb");
+
+        function handleMouseMove(e) {
+            if (!heroInner || window.innerWidth < 768) return;
+
+            const x = (e.clientX / window.innerWidth) - 0.5;
+            const y = (e.clientY / window.innerHeight) - 0.5;
+
+            heroInner.style.transform = `translate3d(${x * -20}px, ${y * -10}px, 0)`;
+
+            heroOrbs.forEach((orb, index) => {
+                const factor = 30 + index * 10;
+                orb.style.transform = `translate3d(${x * factor}px, ${y * factor}px, 0)`;
+            });
+        }
+
+        window.addEventListener("mousemove", handleMouseMove);
+
+        // Combined scroll handler
+        function handleScroll() {
+            setActiveNav();
+            updateProgressBar();
+            updateBackToTop();
+            updateHeroParallax();
+            updateHeaderState();
+        }
+
+        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("load", () => {
+            setActiveNav();
+            updateProgressBar();
+            updateBackToTop();
+            updateHeroParallax();
+            updateHeaderState();
+        });
+    </script>
 </body>
 </html>
