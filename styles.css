@@ -49,7 +49,7 @@ body {
         sans-serif;
     color: var(--text-main);
     background-color: var(--bg-main);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 img {
@@ -341,6 +341,94 @@ body.light-theme .hero::before {
     );
 }
 
+/* --------- HERO SUMMARY CARD --------- */
+
+.hero-summary {
+    position: relative;
+    background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #020617);
+    border-radius: 14px;
+    padding: 1.6rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    overflow: hidden;
+}
+
+.hero-summary::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: conic-gradient(
+        from 180deg,
+        rgba(56, 189, 248, 0.7),
+        rgba(129, 140, 248, 0.6),
+        rgba(244, 114, 182, 0.6),
+        rgba(56, 189, 248, 0.7)
+    );
+    opacity: 0;
+    filter: blur(14px);
+    z-index: -1;
+    transition: opacity 0.4s ease-out;
+}
+
+.hero-summary:hover::before {
+    opacity: 1;
+}
+
+.hero-summary h2 {
+    font-size: 1.05rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.hero-summary ul {
+    list-style: disc;
+    padding-left: 1.3rem;
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* Cyber / competition badges in hero */
+
+.hero-badges {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.badge {
+    font-size: 0.78rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    background: rgba(15, 23, 42, 0.9);
+    color: var(--text-muted);
+    white-space: normal;
+}
+
+.badge-cyber {
+    border-color: rgba(56, 189, 248, 0.7);
+    background: rgba(8, 47, 73, 0.9);
+    color: #e0f2fe;
+}
+
+body.light-theme .hero-summary {
+    background: #ffffff;
+    border-color: rgba(209, 213, 219, 0.9);
+}
+
+body.light-theme .badge {
+    background: #f3f4ff;
+    border-color: rgba(148, 163, 184, 0.6);
+    color: #1f2933;
+}
+
+body.light-theme .badge-cyber {
+    background: #e0f2fe;
+    border-color: #38bdf8;
+}
+
 /* --------- BUTTONS --------- */
 
 .btn {
@@ -392,67 +480,16 @@ body.light-theme .btn.secondary:hover {
     background-color: #e5edff;
 }
 
-/* --------- HERO SUMMARY CARD --------- */
-
-.hero-summary {
-    position: relative;
-    background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #020617);
-    border-radius: 14px;
-    padding: 1.6rem;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(148, 163, 184, 0.35);
-    overflow: hidden;
-}
-
-.hero-summary::before {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    border-radius: inherit;
-    background: conic-gradient(
-        from 180deg,
-        rgba(56, 189, 248, 0.7),
-        rgba(129, 140, 248, 0.6),
-        rgba(244, 114, 182, 0.6),
-        rgba(56, 189, 248, 0.7)
-    );
-    opacity: 0;
-    filter: blur(14px);
-    z-index: -1;
-    transition: opacity 0.4s ease-out;
-}
-
-.hero-summary:hover::before {
-    opacity: 1;
-}
-
-.hero-summary h2 {
-    font-size: 1.05rem;
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-}
-
-.hero-summary ul {
-    list-style: disc;
-    padding-left: 1.3rem;
-    margin: 0;
-    color: var(--text-muted);
-}
-
-body.light-theme .hero-summary {
-    background: #ffffff;
-    border-color: rgba(209, 213, 219, 0.9);
-}
-
 /* --------- GENERAL SECTIONS --------- */
 
 .section {
-    padding: 3rem 0;
+    padding: 3.75rem 0;
     background-color: var(--bg-main);
 }
 
 .section-alt {
     background: radial-gradient(circle at top, rgba(15, 23, 42, 0.7), #020617);
+    padding: 3.75rem 0;
 }
 
 body.light-theme .section-alt {
@@ -526,16 +563,16 @@ body.light-theme .section-alt {
 /* --------- CARD GRID (EXPERTISE) --------- */
 
 .card-grid {
-    margin-top: 1.5rem;
+    margin-top: 1.8rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.3rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.8rem;
 }
 
 .card {
     background: radial-gradient(circle at top, #020817, #020617);
     border-radius: 12px;
-    padding: 1.3rem 1.5rem;
+    padding: 1.6rem 1.7rem;
     box-shadow: var(--shadow-soft);
     border: 1px solid rgba(31, 41, 55, 0.9);
     transition:
@@ -602,8 +639,8 @@ body.light-theme .project-item {
 
 .resume-grid {
     display: grid;
-    gap: 1.5rem;
-    margin: 1.5rem 0;
+    gap: 2rem;
+    margin: 1.8rem 0;
 }
 
 .resume-grid h3 {
@@ -617,9 +654,23 @@ body.light-theme .project-item {
     color: var(--text-muted);
 }
 
+.resume-grid ul li + li {
+    margin-top: 0.6rem;
+}
+
 .resume-note {
     font-size: 0.9rem;
     color: var(--text-muted);
+}
+
+/* Divider between core competencies and recent role */
+
+.resume-divider {
+    height: 1px;
+    background: linear-gradient(to right, rgba(148, 163, 184, 0.6), transparent);
+    opacity: 0.8;
+    margin: 0.25rem 0;
+    grid-column: 1 / -1;
 }
 
 /* --------- CONTACT --------- */
@@ -749,4 +800,51 @@ body.light-theme .site-footer {
     .hero {
         padding-top: 2.5rem;
     }
+
+    .hero-badges {
+        flex-direction: column;
+    }
+    /* --------- TECH STACK STRIP --------- */
+
+.tech-stack {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.tech-stack-label {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+}
+
+.tech-stack-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.badge-tech {
+    border-color: rgba(148, 163, 184, 0.7);
+    background: rgba(15, 23, 42, 0.95);
+    color: var(--text-main);
+}
+
+body.light-theme .badge-tech {
+    background: #ffffff;
+    border-color: rgba(148, 163, 184, 0.7);
+    color: #111827;
+}
+
+/* Mobile tweaks for tech stack */
+@media (max-width: 640px) {
+    .tech-stack {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 }
