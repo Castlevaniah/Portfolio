@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic page setup -->
     <meta charset="UTF-8" />
+    <!-- Makes the layout adjust nicely on phones/tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Aaron Hirtle – IT Portfolio</title>
 
-    <!-- Optional: Google Font -->
+    <!-- Google Font for nicer text -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,33 +16,41 @@
         rel="stylesheet"
     />
 
+    <!-- Main CSS file -->
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Scroll progress bar -->
+    <!-- Thin progress bar at the very top that fills as we scroll -->
     <div class="scroll-progress">
         <div class="scroll-progress-bar"></div>
     </div>
 
+    <!-- ====== SITE HEADER + NAVBAR ====== -->
     <header class="site-header">
         <div class="container nav-container">
+            <!-- Logo / name area on the left -->
             <div class="logo">
                 <span class="logo-name">Aaron Neil Hirtle</span>
-                <span class="logo-tagline">IT &amp; Communications • Royal Canadian Navy (2010–2025) • IT Programming Student (NSCC)</span>
+                <span class="logo-tagline">
+                    IT &amp; Communications • Royal Canadian Navy (2010–2025) • IT Programming Student (NSCC)
+                </span>
             </div>
 
+            <!-- Navigation + theme toggle on the right -->
             <div class="nav-right">
-                <!-- Theme toggle -->
+                <!-- Dark / light theme button -->
                 <button class="theme-toggle" aria-label="Toggle theme">
                     🌙
                 </button>
 
-                <!-- Mobile menu button -->
+                <!-- Mobile menu hamburger button (only shows on small screens) -->
                 <button class="nav-toggle" aria-label="Toggle navigation">
                     ☰
                 </button>
 
+                <!-- Main navigation links -->
                 <nav class="main-nav">
+                    <!-- These links scroll down to sections on the page -->
                     <a href="#about">About</a>
                     <a href="#expertise">Expertise</a>
                     <a href="#projects">Projects</a>
@@ -50,16 +61,20 @@
         </div>
     </header>
 
+    <!-- ====== MAIN PAGE CONTENT ====== -->
     <main>
-        <!-- HERO / INTRO SECTION -->
+        <!-- ====== HERO / INTRO SECTION ====== -->
         <section class="hero">
-            <!-- Floating orbs -->
+            <!-- These three divs are glowing background “orbs” -->
             <div class="hero-orb orb-1"></div>
             <div class="hero-orb orb-2"></div>
             <div class="hero-orb orb-3"></div>
 
+            <!-- Main hero content container -->
             <div class="container hero-inner">
+                <!-- Left side: intro text -->
                 <div class="hero-text reveal">
+                    <!-- Title will be used for a typewriter effect in JS -->
                     <h1 id="hero-title">IT &amp; Communications Technician</h1>
                     <p>
                         Halifax-based IT and communications technician with 15 years of service
@@ -69,11 +84,14 @@
                         critical systems running in demanding environments while building
                         practical skills in software and application development.
                     </p>
+                    <!-- Buttons to jump to sections -->
                     <div class="hero-actions">
                         <a href="#expertise" class="btn primary">View Expertise</a>
                         <a href="#projects" class="btn secondary">See Project Work</a>
                     </div>
                 </div>
+
+                <!-- Right side: quick summary card -->
                 <div class="hero-summary reveal tilt-card">
                     <h2>Quick Highlights</h2>
                     <ul>
@@ -84,17 +102,23 @@
                         <li>Building skills in Java, Kotlin, C++, and basic SQL</li>
                     </ul>
 
+                    <!-- Small competition / cyber badges -->
                     <div class="hero-badges">
-                        <span class="badge badge-cyber">Cyber Flag 2021–2023 – Navy winning team &amp; top placements</span>
-                        <span class="badge badge-cyber">ADF Capture the Flag 2024 – Advanced cyber challenges</span>
+                        <span class="badge badge-cyber">
+                            Cyber Flag 2021–2023 – Navy winning team &amp; top placements
+                        </span>
+                        <span class="badge badge-cyber">
+                            ADF Capture the Flag 2024 – Advanced cyber challenges
+                        </span>
                     </div>
                 </div>
             </div>
 
-            <!-- Tech stack strip -->
+            <!-- Tech stack strip under the hero -->
             <div class="container tech-stack">
                 <span class="tech-stack-label">Tech stack:</span>
                 <div class="tech-stack-badges">
+                    <!-- Simple badges listing main tools/tech -->
                     <span class="badge badge-tech">Java</span>
                     <span class="badge badge-tech">Kotlin</span>
                     <span class="badge badge-tech">C++</span>
@@ -108,7 +132,7 @@
             </div>
         </section>
 
-        <!-- ABOUT -->
+        <!-- ====== ABOUT SECTION ====== -->
         <section id="about" class="section section-alt">
             <div class="container narrow reveal">
                 <h2>About</h2>
@@ -130,7 +154,7 @@
             </div>
         </section>
 
-        <!-- EXPERTISE -->
+        <!-- ====== AREAS OF EXPERTISE SECTION ====== -->
         <section id="expertise" class="section">
             <div class="container reveal">
                 <h2>Areas of Expertise</h2>
@@ -139,7 +163,9 @@
                     more detail and examples as I develop this portfolio.
                 </p>
 
+                <!-- Four small cards showing main skill areas -->
                 <div class="card-grid">
+                    <!-- IT support card -->
                     <div class="card reveal tilt-card">
                         <h3>IT Support &amp; Systems</h3>
                         <ul class="expertise-list">
@@ -149,6 +175,7 @@
                         </ul>
                     </div>
 
+                    <!-- Networking card -->
                     <div class="card reveal tilt-card">
                         <h3>Networking &amp; Infrastructure</h3>
                         <ul class="expertise-list">
@@ -158,6 +185,7 @@
                         </ul>
                     </div>
 
+                    <!-- Programming card -->
                     <div class="card reveal tilt-card">
                         <h3>Programming &amp; Development (In Progress)</h3>
                         <ul class="expertise-list">
@@ -167,6 +195,7 @@
                         </ul>
                     </div>
 
+                    <!-- Cyber + soft skills card -->
                     <div class="card reveal tilt-card">
                         <h3>Cybersecurity &amp; Soft Skills</h3>
                         <ul class="expertise-list">
@@ -180,7 +209,7 @@
             </div>
         </section>
 
-        <!-- PROJECTS -->
+        <!-- ====== PROJECTS SECTION ====== -->
         <section id="projects" class="section section-alt">
             <div class="container narrow reveal">
                 <h2>Projects</h2>
@@ -189,6 +218,8 @@
                     Canadian Armed Forces. I’ll add more academic and personal projects from
                     my NSCC work as I go.
                 </p>
+
+                <!-- Simple list of project cards -->
                 <div class="project-list">
                     <article class="project-item reveal tilt-card">
                         <h3>CSC Shipbuilding Project – IT Liaison</h3>
@@ -199,6 +230,7 @@
                             documentation work.
                         </p>
                     </article>
+
                     <article class="project-item reveal tilt-card">
                         <h3>Thin Client Desktop Upgrade</h3>
                         <p>
@@ -211,77 +243,146 @@
             </div>
         </section>
 
-        <!-- RESUME OVERVIEW -->
-<section id="resume" class="section">
-    <div class="container resume-container reveal">
-        <h2>Résumé Overview</h2>
-        <p class="section-intro resume-intro">
-            This is a brief snapshot of my skills and experience. I’ll link a full
-            résumé PDF and add more detail as this site grows.
-        </p>
+        <!-- ====== RESUME OVERVIEW SECTION ====== -->
+        <section id="resume" class="section">
+            <!-- resume-container centers this whole block -->
+            <div class="container resume-container reveal">
+                <h2>Résumé Overview</h2>
 
-        <!-- Small highlight pills -->
-        <div class="resume-highlight-row">
-            <span class="resume-pill">15 years IT &amp; Communications</span>
-            <span class="resume-pill">Royal Canadian Navy (2010–2025)</span>
-            <span class="resume-pill">IT Programming Diploma – NSCC</span>
+                <!-- Short intro about this section -->
+                <p class="section-intro resume-intro">
+                    This is a brief snapshot of my skills and experience. I’ll link a full
+                    résumé PDF and add more detail as this site grows.
+                </p>
+
+                <!-- Small highlight chips under the heading -->
+                <div class="resume-highlight-row">
+                    <span class="resume-pill">15 years IT &amp; Communications</span>
+                    <span class="resume-pill">Royal Canadian Navy (2010–2025)</span>
+                    <span class="resume-pill">IT Programming Diploma – NSCC</span>
+                </div>
+
+                <!-- ====== CAREER GOALS CARD ====== -->
+<div class="card tilt-card career-goals">
+    <h3>Career Goals</h3>
+
+    <!-- Two columns: short-term and long-term goals -->
+    <div class="career-goals-columns">
+        <!-- Short-term goals column -->
+        <div class="career-goals-column">
+            <h4>Short-Term (1–4 Years)</h4>
+            <ul>
+                <li>
+                    Complete my IT Programming Diploma at NSCC with a strong portfolio
+                    of full-stack projects (REST APIs, web UIs, and mobile apps).
+                </li>
+                <li>
+                    Move into an IT support, systems, or junior full-stack / web developer role
+                    where I can apply my Navy experience in a civilian environment.
+                </li>
+                <li>
+                    Strengthen core development skills in Java, Kotlin, C++, SQL, and modern
+                    web technologies, while keeping up basic security practices and occasional
+                    CTF-style cyber challenges.
+                </li>
+            </ul>
         </div>
 
-        <div class="resume-grid">
-            <!-- Card 1: Core Competencies -->
-            <div class="card resume-card tilt-card">
-                <h3>Core Competencies</h3>
-                <ul>
-                    <li><strong>IT Support &amp; Systems:</strong> Windows desktop/laptop setup, troubleshooting, and hardware diagnostics.</li>
-                    <li><strong>Systems &amp; Servers:</strong> Basic Windows/Linux administration, user accounts, updates, and backups.</li>
-                    <li><strong>Networking:</strong> Basic configuration/monitoring and shipboard/shore-based communications systems.</li>
-                    <li><strong>Development:</strong> Java, Kotlin, C++, basic SQL, Android Studio (XML &amp; Jetpack Compose), simple REST-style back-ends.</li>
-                    <li><strong>Cybersecurity:</strong> Foundations in incident response, digital forensics, penetration testing, and malware analysis.</li>
-                </ul>
-            </div>
-
-            <!-- Card 2: Experience Snapshot -->
-            <div class="card resume-card tilt-card">
-                <h3>Experience Snapshot</h3>
-                <p class="resume-role-title">
-                    IT &amp; Communications Technician<br />
-                    <span class="resume-role-meta">
-                        Royal Canadian Navy – Department of National Defence, 2010–2025
-                    </span>
-                </p>
-                <ul>
-                    <li>Maintained shipboard IT and communications systems in mission-critical environments.</li>
-                    <li>Supported hardware, software, and connectivity issues for crew members.</li>
-                    <li>Performed routine maintenance, updates, and basic network/server support.</li>
-                    <li>Followed strict procedures and documentation to ensure reliability and safety.</li>
-                </ul>
-            </div>
-
-            <!-- Card 3: Education & Target Roles -->
-            <div class="card resume-card tilt-card">
-                <h3>Education &amp; Target Roles</h3>
-                <ul>
-                    <li>
-                        <strong>IT Programming Diploma (In Progress)</strong>, NSCC – 2024 to Present,
-                        focused on OOP, mobile apps, web/back-end, game, and desktop development.
-                    </li>
-                    <li>
-                        Building experience with software testing and basic quality control practices.
-                    </li>
-                    <li>
-                        Preparing for roles such as:
-                        Mobile Application Developer, Web Developer, Back-end Developer,
-                        Game Developer, Desktop Application Developer (Windows), Systems
-                        Developer, Junior Software Tester, and Quality Control Specialist.
-                    </li>
-                </ul>
-            </div>
+        <!-- Long-term goals column -->
+        <div class="career-goals-column">
+            <h4>Long-Term (5+ Years)</h4>
+            <ul>
+                <li>
+                    Grow into a full-stack developer who can design, build, and maintain
+                    applications end-to-end (front-end, back-end, and data).
+                </li>
+                <li>
+                    Take on more responsibility in system design, performance, and reliability,
+                    contributing to larger products or platforms.
+                </li>
+                <li>
+                    Combine full-stack development with cybersecurity awareness by helping
+                    design and build secure applications, and mentoring newer developers
+                    on secure coding and best practices.
+                </li>
+            </ul>
         </div>
     </div>
-</section>
+</div>
 
 
-        <!-- CONTACT -->
+                <!-- ====== THREE MAIN RESUME CARDS ====== -->
+                <div class="resume-grid">
+                    <!-- Card 1: core skills -->
+                    <div class="card resume-card tilt-card">
+                        <h3>Core Competencies</h3>
+                        <ul>
+                            <li>
+                                <strong>IT Support &amp; Systems:</strong>
+                                Windows desktop/laptop setup, troubleshooting, and hardware diagnostics.
+                            </li>
+                            <li>
+                                <strong>Systems &amp; Servers:</strong>
+                                Basic Windows/Linux administration, user accounts, updates, and backups.
+                            </li>
+                            <li>
+                                <strong>Networking:</strong>
+                                Basic configuration/monitoring and shipboard/shore-based communications systems.
+                            </li>
+                            <li>
+                                <strong>Development:</strong>
+                                Java, Kotlin, C++, basic SQL, Android Studio (XML &amp; Jetpack Compose),
+                                and simple REST-style back-end services.
+                            </li>
+                            <li>
+                                <strong>Cybersecurity:</strong>
+                                Foundations in incident response, digital forensics, penetration testing,
+                                and malware analysis.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2: experience snapshot -->
+                    <div class="card resume-card tilt-card">
+                        <h3>Experience Snapshot</h3>
+                        <p class="resume-role-title">
+                            IT &amp; Communications Technician
+                            <span class="resume-role-meta">
+                                Royal Canadian Navy – Department of National Defence, 2010–2025
+                            </span>
+                        </p>
+                        <ul>
+                            <li>Maintained shipboard IT and communications systems in mission-critical environments.</li>
+                            <li>Supported hardware, software, and connectivity issues for crew members.</li>
+                            <li>Performed routine maintenance, updates, and basic network/server support.</li>
+                            <li>Followed strict procedures and documentation to ensure reliability and safety.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3: education + target roles -->
+                    <div class="card resume-card tilt-card">
+                        <h3>Education &amp; Target Roles</h3>
+                        <ul>
+                            <li>
+                                <strong>IT Programming Diploma (In Progress)</strong>, NSCC – 2024 to Present,
+                                focused on OOP, mobile apps, web/back-end, game, and desktop development.
+                            </li>
+                            <li>
+                                Building experience with software testing and basic quality control practices.
+                            </li>
+                            <li>
+                                Preparing for roles such as:
+                                Mobile Application Developer, Web Developer, Back-end Developer,
+                                Game Developer, Desktop Application Developer (Windows), Systems
+                                Developer, Junior Software Tester, and Quality Control Specialist.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CONTACT SECTION ====== -->
         <section id="contact" class="section section-alt">
             <div class="container narrow reveal">
                 <h2>Contact</h2>
@@ -309,38 +410,44 @@
         </section>
     </main>
 
+    <!-- ====== FOOTER ====== -->
     <footer class="site-footer">
         <div class="container">
+            <!-- Year is filled in with JavaScript so it always stays current -->
             <p>&copy; <span id="year"></span> Aaron Neil Hirtle. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Back to top button -->
+    <!-- Back to top floating button -->
     <button class="back-to-top" aria-label="Back to top">↑</button>
 
+    <!-- ====== MAIN JAVASCRIPT ====== -->
     <script>
-        // 1) Keep footer year current
+        // 1) Set footer year automatically so we don't have to update it manually
         document.getElementById("year").textContent = new Date().getFullYear();
 
-        // 2) Smooth scroll for internal links (nav + buttons)
+        // 2) Smooth scroll for internal links (links that start with "#")
         const scrollLinks = document.querySelectorAll('a[href^="#"]');
 
         scrollLinks.forEach(link => {
             link.addEventListener("click", (event) => {
                 const href = link.getAttribute("href");
+                // If the link is just "#" do nothing
                 if (!href || href === "#") return;
 
+                // Remove the "#" to get the target id
                 const targetId = href.substring(1);
                 const targetEl = document.getElementById(targetId);
 
                 if (targetEl) {
                     event.preventDefault();
+                    // Smooth scroll to that element
                     targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
                 }
             });
         });
 
-        // 3) Highlight active nav link while scrolling
+        // 3) Highlight the nav link for the section that's currently in view
         const sections = document.querySelectorAll("section[id]");
         const navLinks = document.querySelectorAll(".main-nav a");
 
@@ -353,11 +460,13 @@
                 const sectionTop = scrollY + rect.top;
                 const sectionHeight = section.offsetHeight;
 
+                // Check if we are inside this section's vertical range
                 if (scrollY >= sectionTop - 140 && scrollY < sectionTop + sectionHeight - 140) {
                     currentId = section.id;
                 }
             });
 
+            // Add "active" class to the nav link that matches the current section
             navLinks.forEach(link => {
                 const href = link.getAttribute("href");
                 const matches = href === `#${currentId}`;
@@ -365,7 +474,7 @@
             });
         }
 
-        // 4) Mobile nav toggle
+        // 4) Mobile nav open/close
         const navToggle = document.querySelector(".nav-toggle");
         const mainNav = document.querySelector(".main-nav");
 
@@ -374,6 +483,7 @@
                 mainNav.classList.toggle("open");
             });
 
+            // Close the menu when a link is clicked (on mobile)
             navLinks.forEach(link => {
                 link.addEventListener("click", () => {
                     mainNav.classList.remove("open");
@@ -381,54 +491,60 @@
             });
         }
 
-        // 5) Typewriter effect on hero title
+        // 5) Simple typewriter effect for the hero title
         const heroTitle = document.getElementById("hero-title");
         if (heroTitle) {
-            const fullText = heroTitle.textContent.trim();
-            heroTitle.textContent = "";
+            const fullText = heroTitle.textContent.trim(); // original text
+            heroTitle.textContent = ""; // clear the text
             let index = 0;
 
             function typeNext() {
                 if (index <= fullText.length) {
+                    // Add one more character each time
                     heroTitle.textContent = fullText.slice(0, index);
                     index++;
-                    setTimeout(typeNext, 70);
+                    setTimeout(typeNext, 70); // typing speed
                 }
             }
 
+            // Small delay before we start typing
             setTimeout(typeNext, 400);
         }
 
-        // 6) Scroll reveal animations
+        // 6) Scroll reveal animations using IntersectionObserver
         const revealEls = document.querySelectorAll(".reveal");
 
         if ("IntersectionObserver" in window) {
             const observer = new IntersectionObserver(
                 (entries) => {
                     entries.forEach((entry) => {
+                        // When an element scrolls into view, add reveal-visible class
                         if (entry.isIntersecting) {
                             entry.target.classList.add("reveal-visible");
-                            observer.unobserve(entry.target);
+                            observer.unobserve(entry.target); // stop watching this element
                         }
                     });
                 },
-                { threshold: 0.2 }
+                { threshold: 0.2 } // trigger when 20% visible
             );
 
             revealEls.forEach((el, index) => {
+                // Staggered delay so elements come in one after another
                 el.style.transitionDelay = `${index * 60}ms`;
                 observer.observe(el);
             });
         } else {
+            // Fallback for old browsers: just show everything
             revealEls.forEach((el) => el.classList.add("reveal-visible"));
         }
 
-        // 7) Theme toggle (with saved preference)
+        // 7) Theme toggle (dark / light) with saved preference in localStorage
         const body = document.body;
         const themeToggle = document.querySelector(".theme-toggle");
 
         function updateThemeIcon() {
             if (!themeToggle) return;
+            // If body has light-theme class, show a sun, otherwise show a moon
             if (body.classList.contains("light-theme")) {
                 themeToggle.textContent = "☀️";
             } else {
@@ -436,6 +552,7 @@
             }
         }
 
+        // Load saved theme if it exists
         const storedTheme = localStorage.getItem("theme");
         if (storedTheme === "light") {
             body.classList.add("light-theme");
@@ -444,13 +561,15 @@
 
         if (themeToggle) {
             themeToggle.addEventListener("click", () => {
+                // Toggle the light-theme class on the body
                 const isLight = body.classList.toggle("light-theme");
+                // Save choice for next visit
                 localStorage.setItem("theme", isLight ? "light" : "dark");
                 updateThemeIcon();
             });
         }
 
-        // 8) Scroll progress bar
+        // 8) Scroll progress bar logic
         const progressBar = document.querySelector(".scroll-progress-bar");
 
         function updateProgressBar() {
@@ -458,14 +577,16 @@
             const scrollTop = window.pageYOffset;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            // Set width of the bar based on scroll %
             progressBar.style.width = `${progress}%`;
         }
 
-        // 9) Back-to-top button
+        // 9) Back-to-top button show/hide and click behavior
         const backToTopBtn = document.querySelector(".back-to-top");
 
         function updateBackToTop() {
             if (!backToTopBtn) return;
+            // Only show button after scrolling down a bit
             if (window.pageYOffset > 400) {
                 backToTopBtn.classList.add("visible");
             } else {
@@ -475,20 +596,22 @@
 
         if (backToTopBtn) {
             backToTopBtn.addEventListener("click", () => {
+                // Smooth scroll to the very top
                 window.scrollTo({ top: 0, behavior: "smooth" });
             });
         }
 
-        // 10) Hero parallax (scroll-based background)
+        // 10) Simple parallax effect on hero background
         const heroSection = document.querySelector(".hero");
 
         function updateHeroParallax() {
             if (!heroSection) return;
             const offset = window.pageYOffset;
+            // Move the background slightly as we scroll
             heroSection.style.backgroundPosition = `center ${offset * 0.2}px`;
         }
 
-        // 11) Header shrink on scroll
+        // 11) Shrink header slightly when we start scrolling
         const headerEl = document.querySelector(".site-header");
 
         function updateHeaderState() {
@@ -500,18 +623,22 @@
             }
         }
 
-        // 12) Mouse parallax for hero content and orbs
+        // 12) Mouse-based parallax for hero content and orbs (desktop only)
         const heroInner = document.querySelector(".hero-inner");
         const heroOrbs = document.querySelectorAll(".hero-orb");
 
         function handleMouseMove(e) {
+            // Skip on small screens
             if (!heroInner || window.innerWidth < 768) return;
 
+            // x and y are from -0.5 to +0.5
             const x = (e.clientX / window.innerWidth) - 0.5;
             const y = (e.clientY / window.innerHeight) - 0.5;
 
+            // Slide main hero content slightly opposite the mouse
             heroInner.style.transform = `translate3d(${x * -20}px, ${y * -10}px, 0)`;
 
+            // Move the orbs a bit more for depth effect
             heroOrbs.forEach((orb, index) => {
                 const factor = 30 + index * 10;
                 orb.style.transform = `translate3d(${x * factor}px, ${y * factor}px, 0)`;
@@ -520,7 +647,7 @@
 
         window.addEventListener("mousemove", handleMouseMove);
 
-        // Combined scroll handler
+        // Combined scroll handler: we call several small functions on scroll
         function handleScroll() {
             setActiveNav();
             updateProgressBar();
@@ -529,8 +656,10 @@
             updateHeaderState();
         }
 
+        // Hook scroll + load events
         window.addEventListener("scroll", handleScroll);
         window.addEventListener("load", () => {
+            // Run once on load so everything is in the right state
             setActiveNav();
             updateProgressBar();
             updateBackToTop();
