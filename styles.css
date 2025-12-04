@@ -1,23 +1,33 @@
-/* --------- THEME TOKENS --------- */
+/* =========================================
+   THEME TOKENS (CSS VARIABLES)
+   - These values act like "global settings"
+   - We reuse them all over the CSS
+   ========================================= */
 :root {
+    /* Tell the browser the default color scheme is dark */
     color-scheme: dark;
 
+    /* Background colors */
     --bg-main: #020617;
     --bg-alt: #020817;
     --bg-header: rgba(15, 23, 42, 0.92);
     --bg-card: #020617;
     --bg-card-soft: #020617;
 
+    /* Accent color and a softer transparent version */
     --accent: #38bdf8;
     --accent-soft: rgba(56, 189, 248, 0.18);
 
+    /* Text colors */
     --text-main: #e5e7eb;
     --text-muted: #9ca3af;
+
+    /* Border + shadow colors */
     --border-subtle: #1f2937;
     --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
 }
 
-/* Light theme overrides */
+/* Light theme overrides (applied when body has .light-theme class) */
 body.light-theme {
     color-scheme: light;
 
@@ -36,11 +46,13 @@ body.light-theme {
     --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
 }
 
-/* --------- GLOBAL RESET --------- */
+/* =========================================
+   GLOBAL RESET / BASE STYLES
+   ========================================= */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+    box-sizing: border-box; /* include padding/border inside width/height */
 }
 
 body {
@@ -49,7 +61,7 @@ body {
         sans-serif;
     color: var(--text-main);
     background-color: var(--bg-main);
-    line-height: 1.7;
+    line-height: 1.7; /* slightly taller lines for easier reading */
 }
 
 img {
@@ -66,6 +78,7 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Reusable container to center content and control max width */
 .container {
     width: 100%;
     max-width: 1100px;
@@ -73,8 +86,9 @@ a:hover {
     padding: 0 1.5rem;
 }
 
-/* --------- SCROLL PROGRESS --------- */
-
+/* =========================================
+   SCROLL PROGRESS BAR
+   ========================================= */
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -87,13 +101,16 @@ a:hover {
 
 .scroll-progress-bar {
     height: 100%;
-    width: 0;
+    width: 0; /* JS updates this */
     background: linear-gradient(to right, #38bdf8, #a855f7);
     transform-origin: left;
 }
 
-/* --------- REVEAL ANIMATIONS --------- */
-
+/* =========================================
+   SCROLL REVEAL ANIMATIONS
+   - Elements start slightly lower and faded
+   - Then slide in and fade in when visible
+   ========================================= */
 .reveal {
     opacity: 0;
     transform: translateY(18px);
@@ -107,19 +124,21 @@ a:hover {
     transform: translateY(0);
 }
 
-/* --------- HEADER & NAV --------- */
-
+/* =========================================
+   HEADER & NAVIGATION
+   ========================================= */
 .site-header {
-    position: sticky;
+    position: sticky;      /* sticks to top when scrolling */
     top: 0;
     z-index: 20;
     background-color: var(--bg-header);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px); /* slight blur behind header */
     border-bottom: 1px solid var(--border-subtle);
     transition: background-color 0.18s ease, border-color 0.18s ease,
         transform 0.18s ease, box-shadow 0.18s ease;
 }
 
+/* Slight drop shadow when we start scrolling */
 .site-header.scrolled {
     box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
     transform: translateY(-1px);
@@ -162,6 +181,7 @@ a:hover {
     font-size: 0.95rem;
 }
 
+/* Links in top nav */
 .main-nav a {
     padding: 0.4rem 0.75rem;
     border-radius: 999px;
@@ -179,18 +199,19 @@ a:hover {
     text-decoration: none;
 }
 
-/* Active nav link for current section */
+/* Highlight active section link */
 .main-nav a.active {
     background-color: var(--accent-soft);
     color: var(--text-main);
     box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.4);
 }
 
+/* Special styling for "Contact" button in nav */
 .nav-cta {
     border: 1px solid rgba(148, 163, 184, 0.7);
 }
 
-/* Theme toggle */
+/* Theme toggle button (moon / sun) */
 .theme-toggle {
     border: 1px solid rgba(148, 163, 184, 0.7);
     background: rgba(15, 23, 42, 0.9);
@@ -209,7 +230,7 @@ a:hover {
     border-color: var(--accent);
 }
 
-/* Mobile nav toggle button */
+/* Mobile nav hamburger (hidden on desktop) */
 .nav-toggle {
     display: none;
     border: 1px solid rgba(148, 163, 184, 0.7);
@@ -227,8 +248,9 @@ body.light-theme .nav-toggle {
     background: #ffffff;
 }
 
-/* --------- HERO SECTION --------- */
-
+/* =========================================
+   HERO SECTION
+   ========================================= */
 .hero {
     position: relative;
     padding: 3.5rem 0 3rem;
@@ -240,6 +262,7 @@ body.light-theme .nav-toggle {
     background-attachment: scroll;
 }
 
+/* Overlay with a subtle extra glow */
 .hero::before {
     content: "";
     position: absolute;
@@ -253,16 +276,16 @@ body.light-theme .nav-toggle {
     pointer-events: none;
 }
 
+/* Inner hero layout uses a grid (left text, right summary card) */
 .hero-inner {
     position: relative;
     display: grid;
     gap: 2.5rem;
     z-index: 1;
-    transition: transform 0.12s ease-out;
+    transition: transform 0.12s ease-out; /* for mouse parallax */
 }
 
-/* Floating orbs */
-
+/* Floating glowing "orbs" in the hero background */
 .hero-orb {
     position: absolute;
     border-radius: 999px;
@@ -274,6 +297,7 @@ body.light-theme .nav-toggle {
     animation: orbPulse 10s ease-in-out infinite alternate;
 }
 
+/* Positions + sizes of orbs */
 .orb-1 {
     width: 260px;
     height: 260px;
@@ -296,6 +320,7 @@ body.light-theme .nav-toggle {
     transform: translate(-50%, -50%);
 }
 
+/* Simple breathing animation for orbs */
 @keyframes orbPulse {
     0% {
         opacity: 0.15;
@@ -308,16 +333,19 @@ body.light-theme .nav-toggle {
     }
 }
 
+/* Hero title text */
 .hero-text h1 {
     font-size: clamp(1.9rem, 3vw, 2.4rem);
     margin-bottom: 1rem;
 }
 
+/* Hero paragraph */
 .hero-text p {
     max-width: 40rem;
     color: var(--text-muted);
 }
 
+/* Buttons row under hero text */
 .hero-actions {
     margin-top: 1.5rem;
     display: flex;
@@ -325,7 +353,7 @@ body.light-theme .nav-toggle {
     gap: 0.75rem;
 }
 
-/* Light theme hero adjustments */
+/* Light theme hero background */
 body.light-theme .hero {
     background:
         radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 55%),
@@ -341,8 +369,9 @@ body.light-theme .hero::before {
     );
 }
 
-/* --------- HERO SUMMARY CARD --------- */
-
+/* =========================================
+   HERO SUMMARY CARD + BADGES
+   ========================================= */
 .hero-summary {
     position: relative;
     background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #020617);
@@ -353,6 +382,7 @@ body.light-theme .hero::before {
     overflow: hidden;
 }
 
+/* Glow border that appears on hover */
 .hero-summary::before {
     content: "";
     position: absolute;
@@ -381,6 +411,7 @@ body.light-theme .hero::before {
     margin-bottom: 0.75rem;
 }
 
+/* List inside summary card */
 .hero-summary ul {
     list-style: disc;
     padding-left: 1.3rem;
@@ -388,8 +419,7 @@ body.light-theme .hero::before {
     color: var(--text-muted);
 }
 
-/* Cyber / competition badges in hero */
-
+/* Row of small badges for competitions */
 .hero-badges {
     margin-top: 1rem;
     display: flex;
@@ -397,6 +427,7 @@ body.light-theme .hero::before {
     gap: 0.5rem;
 }
 
+/* Basic badge style */
 .badge {
     font-size: 0.78rem;
     padding: 0.25rem 0.7rem;
@@ -407,6 +438,7 @@ body.light-theme .hero::before {
     white-space: normal;
 }
 
+/* Special coloring for cyber-related badges */
 .badge-cyber {
     border-color: rgba(56, 189, 248, 0.7);
     background: rgba(8, 47, 73, 0.9);
@@ -429,8 +461,9 @@ body.light-theme .badge-cyber {
     border-color: #38bdf8;
 }
 
-/* --------- TECH STACK STRIP --------- */
-
+/* =========================================
+   TECH STACK STRIP BELOW HERO
+   ========================================= */
 .tech-stack {
     margin-top: 1.5rem;
     display: flex;
@@ -452,6 +485,7 @@ body.light-theme .badge-cyber {
     gap: 0.5rem;
 }
 
+/* Tech badges use main badge style but slightly different colors */
 .badge-tech {
     border-color: rgba(148, 163, 184, 0.7);
     background: rgba(15, 23, 42, 0.95);
@@ -464,8 +498,9 @@ body.light-theme .badge-tech {
     color: #111827;
 }
 
-/* --------- BUTTONS --------- */
-
+/* =========================================
+   GENERIC BUTTON STYLES
+   ========================================= */
 .btn {
     display: inline-block;
     padding: 0.6rem 1.4rem;
@@ -484,6 +519,7 @@ body.light-theme .badge-tech {
         transform 0.08s ease;
 }
 
+/* Main blue button */
 .btn.primary {
     background: linear-gradient(135deg, #0ea5e9, #38bdf8);
     color: #0b1120;
@@ -498,6 +534,7 @@ body.light-theme .badge-tech {
     text-decoration: none;
 }
 
+/* Outline-style button */
 .btn.secondary {
     background-color: transparent;
     color: var(--accent);
@@ -515,13 +552,15 @@ body.light-theme .btn.secondary:hover {
     background-color: #e5edff;
 }
 
-/* --------- GENERAL SECTIONS --------- */
-
+/* =========================================
+   SECTION WRAPPERS (ABOUT, PROJECTS, ETC.)
+   ========================================= */
 .section {
     padding: 3.75rem 0;
     background-color: var(--bg-main);
 }
 
+/* Alternate background for contrast */
 .section-alt {
     background: radial-gradient(circle at top, rgba(15, 23, 42, 0.7), #020617);
     padding: 3.75rem 0;
@@ -531,7 +570,7 @@ body.light-theme .section-alt {
     background: linear-gradient(to bottom, #ffffff, #f3f4f6);
 }
 
-/* Animated underline on section headings */
+/* Section titles with animated underline */
 .section h2 {
     font-size: 1.6rem;
     margin-top: 0;
@@ -552,6 +591,7 @@ body.light-theme .section-alt {
     animation: headingPulse 3s ease-in-out infinite alternate;
 }
 
+/* Little pulse animation for underline */
 @keyframes headingPulse {
     0% {
         transform: scaleX(0.7);
@@ -563,6 +603,7 @@ body.light-theme .section-alt {
     }
 }
 
+/* Intro text for sections (usually narrower) */
 .section-intro {
     max-width: 40rem;
     color: var(--text-muted);
@@ -572,6 +613,7 @@ body.light-theme .section-alt {
     max-width: 750px;
 }
 
+/* Paragraph + list spacing */
 .section p {
     margin-bottom: 1rem;
     color: var(--text-muted);
@@ -581,8 +623,9 @@ body.light-theme .section-alt {
     margin-top: 0.25rem;
 }
 
-/* --------- TILT CARDS --------- */
-
+/* =========================================
+   TILT CARD EFFECT (USED ON MANY CARDS)
+   ========================================= */
 .tilt-card {
     transform-style: preserve-3d;
     transition:
@@ -595,8 +638,9 @@ body.light-theme .section-alt {
     transform: translateY(-4px) rotateX(3deg) rotateY(-3deg);
 }
 
-/* --------- CARD GRID (EXPERTISE) --------- */
-
+/* =========================================
+   CARD GRID (EXPERTISE SECTION)
+   ========================================= */
 .card-grid {
     margin-top: 1.8rem;
     display: grid;
@@ -604,6 +648,7 @@ body.light-theme .section-alt {
     gap: 1.8rem;
 }
 
+/* Generic card style reused across site */
 .card {
     background: radial-gradient(circle at top, #020817, #020617);
     border-radius: 12px;
@@ -628,6 +673,7 @@ body.light-theme .section-alt {
     color: var(--text-muted);
 }
 
+/* Glowing effect on hover */
 .card:hover {
     box-shadow: 0 20px 42px rgba(15, 23, 42, 0.95);
     border-color: rgba(56, 189, 248, 0.7);
@@ -639,7 +685,7 @@ body.light-theme .card {
     border-color: rgba(209, 213, 219, 0.9);
 }
 
-/* Lists inside expertise cards */
+/* Bullet lists inside expertise cards */
 .expertise-list {
     list-style: disc;
     padding-left: 1.1rem;
@@ -652,8 +698,9 @@ body.light-theme .card {
     margin-top: 0.35rem;
 }
 
-/* --------- PROJECTS --------- */
-
+/* =========================================
+   PROJECTS SECTION
+   ========================================= */
 .project-list {
     display: flex;
     flex-direction: column;
@@ -683,72 +730,24 @@ body.light-theme .project-item {
     border-color: rgba(209, 213, 219, 0.9);
 }
 
-/* --------- RESUME --------- */
-
-.resume-grid {
-    display: grid;
-    gap: 2rem;
-    margin: 1.8rem 0;
-}
-
-.resume-grid h3 {
-    margin-top: 0;
-    font-size: 1.05rem;
-}
-
-.resume-grid ul {
-    list-style: disc;
-    padding-left: 1.25rem;
-    color: var(--text-muted);
-}
-
-.resume-grid ul li + li {
-    margin-top: 0.6rem;
-}
-
-.resume-note {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-/* Center the top of the Résumé section */
-#resume .narrow {
+/* =========================================
+   RESUME OVERVIEW SECTION
+   ========================================= */
+/* This centers the whole resume block and its heading */
+.resume-container {
+    max-width: 1000px;
+    margin: 0 auto;
     text-align: center;
 }
 
-/* Keep the detailed content left-aligned inside the grid */
-#resume .resume-grid {
-    text-align: left;
+/* This specifically centers the intro paragraph */
+.section-intro.resume-intro {
+    max-width: 40rem;
+    margin: 0 auto 1.5rem;
+    text-align: center;
 }
 
-/* Make sure headings inside the cards stay left */
-#resume .resume-grid h3 {
-    text-align: left;
-}
-
-
-/* Core competencies list – two columns on larger screens */
-.core-list {
-    columns: 2;
-    column-gap: 2rem;
-    padding-left: 1.25rem;
-    margin: 0.4rem 0 0;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-/* Centered resume container */
-/* Center heading + intro in the résumé section */
-.resume-container {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;  /* this centers the h2 and p */
-}
-
-
-.resume-intro {
-    margin-bottom: 1.5rem;
-}
-
-/* Highlight pills under the heading */
+/* Row of small highlight chips */
 .resume-highlight-row {
     display: flex;
     flex-wrap: wrap;
@@ -770,25 +769,34 @@ body.light-theme .resume-pill {
     background: #ffffff;
 }
 
-
-/* New resume grid layout – centered cards */
-.resume-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
-    justify-content: center;          /* centers the whole grid */
-    gap: 1.8rem;
-    margin: 1.8rem auto 0;
-    text-align: left;                 /* text inside cards stays readable */
+/* Career goals card sits above the main resume cards */
+.career-goals {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: left;
 }
 
-
-.resume-card h3 {
+.career-goals h3 {
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     font-size: 1.05rem;
 }
 
-.resume-card ul {
+/* Two columns inside the career goals card */
+.career-goals-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.career-goals-column h4 {
+    margin: 0 0 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.career-goals-column ul {
     list-style: disc;
     padding-left: 1.25rem;
     margin: 0;
@@ -796,17 +804,44 @@ body.light-theme .resume-pill {
     font-size: 0.9rem;
 }
 
-.resume-card ul li + li {
-    margin-top: 0.5rem;
+.career-goals-column ul li + li {
+    margin-top: 0.45rem;
 }
 
-/* Make resume cards a consistent width and centered in their grid cell */
+/* Grid of the three resume cards (skills, experience, education) */
+.resume-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+    justify-content: center;          /* center the cards as a group */
+    gap: 1.8rem;
+    margin: 1.8rem auto 0;
+    text-align: left;                 /* keep text left-aligned inside cards */
+}
+
+/* Extra class so we can control width of resume cards */
 .resume-card {
     max-width: 340px;
     margin: 0 auto;
 }
 
+.resume-card h3 {
+    margin-top: 0;
+    font-size: 1.05rem;
+}
 
+.resume-card ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.resume-card ul li + li {
+    margin-top: 0.6rem;
+}
+
+/* Styling for job title and meta line */
 .resume-role-title {
     margin: 0 0 0.5rem;
     font-weight: 600;
@@ -820,29 +855,9 @@ body.light-theme .resume-pill {
     color: var(--text-muted);
 }
 
-.core-list li {
-    break-inside: avoid;
-    margin-bottom: 0.7rem;
-}
-
-/* Divider between core competencies and recent role */
-.resume-divider {
-    height: 1px;
-    background: linear-gradient(to right, rgba(148, 163, 184, 0.6), transparent);
-    opacity: 0.8;
-    margin: 0.25rem 0;
-    grid-column: 1 / -1;
-}
-
-.section-intro.resume-intro {
-    max-width: 40rem;       /* keep a nice readable width */
-    margin: 0 auto 1.5rem;  /* <-- centers the block horizontally */
-    text-align: center;     /* <-- centers the text inside */
-}
-
-
-/* --------- CONTACT --------- */
-
+/* =========================================
+   CONTACT SECTION
+   ========================================= */
 .contact-list {
     list-style: none;
     padding-left: 0;
@@ -853,8 +868,9 @@ body.light-theme .resume-pill {
     color: var(--text-muted);
 }
 
-/* --------- FOOTER --------- */
-
+/* =========================================
+   FOOTER
+   ========================================= */
 .site-footer {
     border-top: 1px solid var(--border-subtle);
     background-color: #020617;
@@ -868,8 +884,9 @@ body.light-theme .site-footer {
     background-color: #f9fafb;
 }
 
-/* --------- BACK TO TOP BUTTON --------- */
-
+/* =========================================
+   BACK TO TOP BUTTON
+   ========================================= */
 .back-to-top {
     position: fixed;
     right: 1.5rem;
@@ -908,36 +925,45 @@ body.light-theme .site-footer {
     transform: translateY(-2px);
 }
 
-/* --------- RESPONSIVE --------- */
+/* =========================================
+   RESPONSIVE STYLES (MEDIA QUERIES)
+   ========================================= */
 
+/* Tablet and up */
 @media (min-width: 768px) {
     .hero-inner {
-        grid-template-columns: 2fr 1.2fr;
+        grid-template-columns: 2fr 1.2fr; /* hero: text bigger than summary card */
         align-items: center;
     }
-
-    .resume-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 }
 
+/* Small screens (phones) */
 @media (max-width: 768px) {
-    .core-list {
-        columns: 1;
+    /* Resume core list would be one column if we used columns; here we just tweak layout */
+    .tech-stack {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-badges {
+        flex-direction: column;
     }
 }
 
+/* Extra small screens (nav + spacing tweaks) */
 @media (max-width: 640px) {
     .nav-container {
         position: relative;
     }
 
+    /* Show mobile hamburger */
     .nav-toggle {
         display: inline-flex;
         align-items: center;
         justify-content: center;
     }
 
+    /* Mobile dropdown nav menu */
     .main-nav {
         position: absolute;
         top: 100%;
@@ -953,6 +979,7 @@ body.light-theme .site-footer {
         box-shadow: 0 18px 30px rgba(0, 0, 0, 0.7);
     }
 
+    /* Show menu when .open is added by JS */
     .main-nav.open {
         display: flex;
     }
@@ -974,14 +1001,4 @@ body.light-theme .site-footer {
     .hero {
         padding-top: 2.5rem;
     }
-
-    .hero-badges {
-        flex-direction: column;
-    }
-
-    .tech-stack {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
 }
